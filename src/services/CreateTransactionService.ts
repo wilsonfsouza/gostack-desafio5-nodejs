@@ -16,6 +16,7 @@ class CreateTransactionService {
   }
 
   public execute({ title, value, type }: Request): Transaction {
+    // Extra
     if (!['income', 'outcome'].includes(type)) {
       throw new Error('Transaction type is invalid.');
     }
@@ -31,11 +32,6 @@ class CreateTransactionService {
       type,
     });
     return transaction;
-    // if (transaction < 1) {
-    //   throw Error(
-    //     'It was not possible to process this transaction, please try again.',
-    //   );
-    // }
   }
 }
 

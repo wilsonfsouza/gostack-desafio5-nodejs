@@ -9,7 +9,6 @@ const transactionsRepository = new TransactionsRepository();
 
 transactionRouter.get('/', (request, response) => {
   try {
-    // TODO
     const transactions = transactionsRepository.all();
     const balance = transactionsRepository.getBalance();
     return response.json({
